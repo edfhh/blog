@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>test | edfhh&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="一、基本概念1.1什么是漏洞？1.2 常见漏洞扫描工具概述二、理论基础2.1 漏洞扫描概念2.2 扫描类型分类二、“笑脸漏洞” 1.端口扫描：nmap -sV 192.168.153.133，识别端口上运行的网络服务及其具体版本信息 2.使用 NSE 脚本检测后门（nmap –script ftp-vsftpd-backdoor -p 21 192.168.153.133 ，-p 21是为了直接查">
+<meta property="og:type" content="article">
+<meta property="og:title" content="test">
+<meta property="og:url" content="https://edfhh.github.io/blog/2026/07/27/test/index.html">
+<meta property="og:site_name" content="edfhh&#39;s Blog">
+<meta property="og:description" content="一、基本概念1.1什么是漏洞？1.2 常见漏洞扫描工具概述二、理论基础2.1 漏洞扫描概念2.2 扫描类型分类二、“笑脸漏洞” 1.端口扫描：nmap -sV 192.168.153.133，识别端口上运行的网络服务及其具体版本信息 2.使用 NSE 脚本检测后门（nmap –script ftp-vsftpd-backdoor -p 21 192.168.153.133 ，-p 21是为了直接查">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-07-27T05:17:21.000Z">
+<meta property="article:modified_time" content="2026-07-27T13:18:33.279Z">
+<meta property="article:author" content="edfhh">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="edfhh's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">edfhh&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://edfhh.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-test" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2026/07/27/test/" class="article-date">
+  <time class="dt-published" datetime="2026-07-27T05:17:21.000Z" itemprop="datePublished">2026-07-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      test
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="一、基本概念"><a href="#一、基本概念" class="headerlink" title="一、基本概念"></a>一、基本概念</h1><p>1.1什么是漏洞？<br>1.2 常见漏洞扫描工具概述<br>二、理论基础<br>2.1 漏洞扫描概念<br>2.2 扫描类型分类<br>二、“笑脸漏洞”<br> 1.端口扫描：nmap -sV 192.168.153.133，识别端口上运行的网络服务及其具体版本信息<br> 2.使用 NSE 脚本检测后门（nmap –script ftp-vsftpd-backdoor -p 21 192.168.153.133 ，-p 21是为了直接查看21端口的后门漏洞，具有针对性，较省时间），可以快速检测目标 FTP 服务是否存在 VSFTPD 2.3.4 后门漏洞（图中显示获取shell的指令为id）​编辑<br> 3.使用命令 nmap -p9191 192.168.21.131 检测目标主机 6200 端口(vsFTPd 2.3.4后门常见于6200端口)的开放状态（当前检测结果显示为 closed 关闭状态）<br> 4.尝试“笑脸漏洞”（打开6200端口），上面扫描发现21端口是开放的，那我们从21端口入手，连接21端口，并输入“笑脸”：USER test:) （ ：）像一个笑脸，所以名为笑脸漏洞），然后随便输入一个PASS ：122，再点击ctrl + c退出当前指令<br> 5.检测下6200端口是否被打开，发现6200端口神奇的打开了<br> 6.那最后只需要连接6200端口并输入指令id便可以获取shell了<br>三、漏洞扫描-缓冲区溢出（以password.exe为例子）</p>
+<h2 id="一、基本概念-1"><a href="#一、基本概念-1" class="headerlink" title="一、基本概念"></a>一、基本概念</h2><p>1.1什么是漏洞？<br>漏洞（Vulnerability）指的是系统、软件或网络中存在的弱点，可能被攻击者利用来破坏系统安全。漏洞通常来自以下几类原因：<br>（1）软件错误：程序代码写错、输入校验不足、逻辑漏洞等。<br>（2）配置不当：端口暴露、权限设置过高、默认密码未修改。<br>（3）协议缺陷：如明文传输、缺少加密或验证机制。<br>（4）人为疏忽：弱密码、操作失误、安全意识不足。<br>正如著名计算机科学家 Edsger W. Dijkstra 说过：“编程就是不断制造错误的过程。”<br>软件越复杂，漏洞自然越多，因此漏洞扫描和安全检测显得尤为重要。<br>1.2 常见漏洞扫描工具概述<br>漏洞扫描工具可以帮助我们发现系统中的弱点，以下是常用的几类工具：<br>① OpenVAS<br>开源的综合漏洞扫描系统，适合对服务器和网络进行全方位检测。<br>② Nmap（含 NSE 脚本）<br>除了端口扫描外，Nmap 的脚本引擎可以检测弱口令、服务漏洞、配置问题等，是安全测试人员必备工具。<br>③ Netcat（nc）<br>被称为“网络界的瑞士军刀”，可用于端口连接、数据传输、测试后门等场景。<br>④ OWASP ZAP<br>适用于 Web 安全测试，可发现 SQL 注入、XSS、认证缺陷等常见 Web 漏洞。<br>二、理论基础<br>2.1 漏洞扫描概念<br>漏洞扫描是通过自动化工具对目标系统进行安全检测，识别已知安全弱点的过程。它与渗透测试的关系：<br>被动扫描：仅识别漏洞，不进行利用<br>主动扫描：可能包含验证性测试，但不超过破坏性界限<br>2.2 扫描类型分类<br>按目标分类：<br>├── 网络扫描（端口&#x2F;服务发现）<br>├── Web应用扫描<br>├── 数据库扫描<br>├── 操作系统扫描<br>└── 无线网络扫描<br>按认证方式：<br>├── 非认证扫描（外部视角）<br>└── 认证扫描（内部视角，需凭据）<br>二、“笑脸漏洞”<br> 1.端口扫描：nmap -sV 192.168.153.133，识别端口上运行的网络服务及其具体版本信息<br> 2.使用 NSE 脚本检测后门（nmap –script ftp-vsftpd-backdoor -p 21 192.168.153.133 ，-p 21是为了直接查看21端口的后门漏洞，具有针对性，较省时间），可以快速检测目标 FTP 服务是否存在 VSFTPD 2.3.4 后门漏洞（图中显示获取shell的指令为id）<br> 3.使用命令 nmap -p9191 192.168.21.131 检测目标主机 6200 端口(vsFTPd 2.3.4后门常见于6200端口)的开放状态（当前检测结果显示为 closed 关闭状态）<br> 4.尝试“笑脸漏洞”（打开6200端口），上面扫描发现21端口是开放的，那我们从21端口入手，连接21端口，并输入“笑脸”：USER test:) （ ：）像一个笑脸，所以名为笑脸漏洞），然后随便输入一个PASS ：122，再点击ctrl + c退出当前指令<br> 5.检测下6200端口是否被打开，发现6200端口神奇的打开了<br> 6.那最后只需要连接6200端口并输入指令id便可以获取shell了<br>补充：nc全称为NetCat，也叫做瑞士军刀，可用来连接端口等系列操作。<br>三、漏洞扫描-缓冲区溢出（以password.exe为例子）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://edfhh.github.io/blog/2026/07/27/test/" data-id="cuid3wH7yFOHMSzdaGfM_dfd7" data-title="test" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2026/07/27/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Web%E5%AE%89%E5%85%A8/">Web安全</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Java%E5%AE%89%E5%85%A8/" rel="tag">Java安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D/" rel="tag">漏洞修复</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E9%9D%B6%E5%9C%BA/" rel="tag">靶场</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/Java%E5%AE%89%E5%85%A8/" style="font-size: 10px;">Java安全</a> <a href="/blog/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" style="font-size: 10px;">代码审计</a> <a href="/blog/tags/%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D/" style="font-size: 10px;">漏洞修复</a> <a href="/blog/tags/%E9%9D%B6%E5%9C%BA/" style="font-size: 10px;">靶场</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2026/07/">七月 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2026/07/27/%E6%B5%8B%E8%AF%95/">测试</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2026/07/27/javasec%E9%9D%B6%E5%9C%BA%E9%80%9A%E5%85%B3/">javasec靶场通关</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2026/07/27/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2026/07/27/test/">test</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 edfhh<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

